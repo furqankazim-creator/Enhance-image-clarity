@@ -1,0 +1,10 @@
+{
+  "description": "Enhance image clarity and quality for professionals and creatives, ensuring visually stunning results for presentations, portfolios, and marketing materials.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
