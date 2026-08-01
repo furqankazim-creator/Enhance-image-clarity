@@ -30,6 +30,10 @@ const statusColors: Record<string, { bg: string; text: string }> = {
   Pending: { bg: '#FFF3CD', text: 'var(--brand-terracotta)' },
 }
 
+function statusStyle(status: { bg: string; text: string }) {
+  return { background: status.bg, color: status.text }
+}
+
 const navItems: { id: AdminSection; label: string; icon: string }[] = [
   { id: 'dashboard', label: 'Dashboard', icon: '📊' },
   { id: 'products', label: 'Products', icon: '🌿' },
@@ -182,12 +186,12 @@ export default function AdminDashboard() {
                           <td className="px-4 py-3" style={{ color: 'var(--brand-warm-gray)' }}>{o.date}</td>
                           <td className="px-4 py-3 font-semibold">${o.total}</td>
                           <td className="px-4 py-3">
-                            <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={statusColors[o.payment]}>
+                            <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={statusStyle(statusColors[o.payment])}>
                               {o.payment}
                             </span>
                           </td>
                           <td className="px-4 py-3">
-                            <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={statusColors[o.status]}>
+                            <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={statusStyle(statusColors[o.status])}>
                               {o.status}
                             </span>
                           </td>
@@ -250,7 +254,7 @@ export default function AdminDashboard() {
                             <span style={{ color: p.stock < 5 ? 'var(--brand-muted-red)' : 'var(--brand-green)' }}>{p.stock}</span>
                           </td>
                           <td className="px-4 py-3">
-                            <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={p.inStock ? statusColors.Delivered : statusColors.Cancelled}>
+                            <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={statusStyle(p.inStock ? statusColors.Delivered : statusColors.Cancelled)}>
                               {p.inStock ? 'Active' : 'Out of Stock'}
                             </span>
                           </td>
@@ -302,10 +306,10 @@ export default function AdminDashboard() {
                           <td className="px-4 py-3" style={{ color: 'var(--brand-warm-gray)' }}>{o.date}</td>
                           <td className="px-4 py-3 font-semibold">${o.total}</td>
                           <td className="px-4 py-3">
-                            <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={statusColors[o.payment]}>{o.payment}</span>
+                            <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={statusStyle(statusColors[o.payment])}>{o.payment}</span>
                           </td>
                           <td className="px-4 py-3">
-                            <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={statusColors[o.status]}>{o.status}</span>
+                            <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={statusStyle(statusColors[o.status])}>{o.status}</span>
                           </td>
                           <td className="px-4 py-3">
                             <button className="text-xs underline" style={{ color: 'var(--brand-green)' }}>View</button>
@@ -407,11 +411,11 @@ export default function AdminDashboard() {
                 <h3 className="font-semibold mb-4" style={{ fontFamily: 'Fraunces, serif' }}>Store Settings</h3>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
-                    { label: 'Store Name', val: 'Desk Plant' },
+                    { label: 'Store Name', val: 'Nabat Green' },
                     { label: 'Currency', val: 'USD ($)' },
                     { label: 'Shipping Fee', val: '5.99' },
                     { label: 'Free Shipping Threshold', val: '60.00' },
-                    { label: 'Contact Email', val: 'hello@deskplant.com' },
+                    { label: 'Contact Email', val: 'hello@nabatgreen.com' },
                     { label: 'Phone', val: '+1 (555) 000-9876' },
                   ].map((f) => (
                     <div key={f.label}>
@@ -444,9 +448,9 @@ export default function AdminDashboard() {
                 <h3 className="font-semibold mb-4" style={{ fontFamily: 'Fraunces, serif' }}>Social Media</h3>
                 <div className="flex flex-col gap-3">
                   {[
-                    { label: 'Instagram', val: '@deskplant' },
-                    { label: 'Twitter / X', val: '@deskplant' },
-                    { label: 'Pinterest', val: 'deskplant' },
+                    { label: 'Instagram', val: '@nabatgreen' },
+                    { label: 'Twitter / X', val: '@nabatgreen' },
+                    { label: 'Pinterest', val: 'nabatgreen' },
                   ].map((f) => (
                     <div key={f.label} className="flex items-center gap-3">
                       <label className="text-sm w-28 flex-shrink-0">{f.label}</label>

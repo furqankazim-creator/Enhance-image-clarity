@@ -263,7 +263,7 @@ export const reviews = [
     rating: 4,
     date: 'Feb 2025',
     comment:
-      'Beautiful ZZ Plant — exactly as pictured. Only minor issue was the pot had a small chip but Desk Plant sent a replacement pot immediately. Outstanding customer service.',
+      'Beautiful ZZ Plant — exactly as pictured. Only minor issue was the pot had a small chip but Nabat Green sent a replacement pot immediately. Outstanding customer service.',
     avatar: 'PN',
     product: 'ZZ Plant',
   },
@@ -283,7 +283,7 @@ export const reviews = [
     rating: 5,
     date: 'Apr 2025',
     comment:
-      'My fifth order from Desk Plant and every time the quality is impeccable. The plants are always healthy, well-established, and the packaging is beautifully minimal. Highly recommend.',
+      'My fifth order from Nabat Green and every time the quality is impeccable. The plants are always healthy, well-established, and the packaging is beautifully minimal. Highly recommend.',
     avatar: 'ER',
     product: 'Succulent Trio',
   },

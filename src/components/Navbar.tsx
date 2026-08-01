@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAppStore } from '../store/appStore'
+import logo from '../assets/logo.png'
+import logoDark from '../assets/logo-dark.png'
 
 export default function Navbar() {
   const { navigate, page, cartItems, setCartOpen, isLoggedIn, theme, toggleTheme } = useAppStore()
@@ -42,15 +44,13 @@ export default function Navbar() {
           borderBottom: scrolled ? '1px solid var(--brand-border)' : '1px solid transparent',
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-20">
           {/* Logo */}
           <button
             onClick={() => navigate('home')}
-            className="flex items-center gap-2 font-bold text-xl"
-            style={{ fontFamily: 'Fraunces, serif', color: 'var(--brand-green)' }}
+            className="flex items-center gap-2"
           >
-            <span className="text-2xl">🌿</span>
-            Desk Plant
+            <img src={theme === 'dark' ? logoDark : logo} alt="Nabat Green" className="h-16 w-auto object-contain" />
           </button>
 
           {/* Desktop nav links */}

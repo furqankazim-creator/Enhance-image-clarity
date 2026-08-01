@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
 import { useAppStore } from '../store/appStore'
+import logo from '../assets/logo.png'
+import logoDark from '../assets/logo-dark.png'
 
 export default function Footer() {
-  const { navigate } = useAppStore()
+  const { navigate, theme } = useAppStore()
 
   return (
     <footer style={{ background: 'var(--brand-green)', color: 'var(--brand-cream)' }}>
@@ -11,8 +13,16 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-2xl">🌿</span>
-              <span className="text-xl font-bold" style={{ fontFamily: 'Fraunces, serif' }}>Desk Plant</span>
+              {theme === 'dark' ? (
+                <img src={logoDark} alt="Nabat Green" className="h-24 w-auto object-contain" />
+              ) : (
+                <img
+                  src={logo}
+                  alt="Nabat Green"
+                  className="h-24 w-auto object-contain rounded-lg p-1.5 inline-block"
+                  style={{ background: 'var(--brand-cream)' }}
+                />
+              )}
             </div>
             <p className="text-sm leading-relaxed opacity-80 mb-6">
               Curated indoor plants for workspaces that thrive on attention — or the lack of it.
@@ -97,7 +107,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-14 pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderColor: 'rgba(255,255,255,0.15)' }}>
-          <p className="text-xs opacity-60">© 2025 Desk Plant. All rights reserved.</p>
+          <p className="text-xs opacity-60">© 2025 Nabat Green. All rights reserved.</p>
           <div className="flex gap-4 text-xs opacity-60">
             <button className="hover:opacity-100">Privacy Policy</button>
             <button className="hover:opacity-100">Terms of Service</button>

@@ -123,7 +123,7 @@ export default function App() {
         </AnimatePresence>
       </main>
 
-      {page !== 'admin' && <Footer />}
+      <Footer />
     </div>
   )
 }
@@ -167,7 +167,7 @@ function AboutPage() {
           Rooted in passion
         </h1>
         <p className="text-lg leading-relaxed" style={{ color: 'var(--brand-warm-gray)' }}>
-          Desk Plant started in 2021 from a spare bedroom and a deep belief that every workspace deserves a living thing.
+          Nabat Green started in 2021 from a spare bedroom and a deep belief that every workspace deserves a living thing.
           Four years later, we're still run by people who'd rather talk about soil drainage than spreadsheets.
         </p>
       </motion.div>

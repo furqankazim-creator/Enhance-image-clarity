@@ -53,10 +53,9 @@ function CountUp({ end, suffix = '' }: { end: number; suffix?: string }) {
 }
 
 export default function HomePage() {
-  const { navigate, addToCart } = useAppStore()
+  const { navigate } = useAppStore()
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
-  const [carouselIndex, setCarouselIndex] = useState(0)
   const scrollRef = useRef<HTMLDivElement>(null)
   const bestSellers = products.filter((p) => p.isBestSeller)
 

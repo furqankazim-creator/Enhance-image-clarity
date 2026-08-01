@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useAppStore } from '../store/appStore'
+import logo from '../assets/logo.png'
+import logoDark from '../assets/logo-dark.png'
 
 export default function LoginPage() {
-  const { navigate, setLoggedIn, addToast } = useAppStore()
+  const { navigate, setLoggedIn, addToast, theme } = useAppStore()
   const [mode, setMode] = useState<'login' | 'register'>('login')
   const [form, setForm] = useState({ name: '', email: '', password: '', confirm: '' })
 
@@ -22,7 +24,9 @@ export default function LoginPage() {
         className="w-full max-w-sm"
       >
         <div className="text-center mb-8">
-          <button onClick={() => navigate('home')} className="text-3xl mb-4 block mx-auto">🌿</button>
+          <button onClick={() => navigate('home')} className="block mx-auto mb-4">
+            <img src={theme === 'dark' ? logoDark : logo} alt="Nabat Green" className="h-24 w-auto object-contain mx-auto" />
+          </button>
           <h1 className="text-3xl font-bold" style={{ fontFamily: 'Fraunces, serif' }}>
             {mode === 'login' ? 'Welcome back' : 'Create account'}
           </h1>
